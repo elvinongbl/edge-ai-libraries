@@ -51,8 +51,8 @@ services:
       SERVER_CERT: /run/secrets/ModelRegistry_Server/public.crt
       CA_CERT: /run/secrets/ModelRegistry_Server/server-ca.crt
       SERVER_PRIVATE_KEY: /run/secrets/ModelRegistry_Server/private.key
-      no_proxy: mr_minio
-      NO_PROXY: mr_minio
+      no_proxy: mr_minio:${no_proxy}
+      NO_PROXY: mr_minio:${no_proxy}
       http_proxy: ${http_proxy}
       https_proxy: ${https_proxy}
     volumes:
